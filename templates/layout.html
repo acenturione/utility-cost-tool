@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <!-- Bootstrap CSS -->
+    <! <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="/static/main.css" />
+    
+    <title>Utility Cost Estimate Tool</title>
+</head>
+
+<body>
+    <h1>Utility Cost Estimate Tool</h1>
+
+    <ul>
+        <li> <a href="{{ url_for('build_project') }}">Estimate Project Costs </a></li>
+        <li> <a href="{{ url_for('view_costs') }}">View Cost Data </a></li>
+        <li> <a href="{{ url_for('enter_costs') }}">Enter Costs Into the Database </a></li>
+    </ul>
+    
+    {% block body %}
+    {% endblock %}
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+<body>    
+    <form action="{{ url_for('enter_costs') }}" method="post">
+        <input type="text" name="item" placeholder="Enter Item">
+        <input type="text" name="size" placeholder="Enter Size">
+        <input type="text" name="unit" placeholder="Enter Unit of Measurement">
+        <input type="text" name="cost" placeholder="Enter Unit Cost">
+        <button>Add Line</button>
+    </form>
+        
+    <h3>Takeoff Table</h3>
+    
+    <div class="summary_table">
+        <table>
+            <tr>
+            <th>Item Name</th>
+            <th>Size</th>
+            <th>Unit of Measure</th>
+            <th>Cost</th>
+            </tr>
+        <tr>
+            {% for item in takeoff %}
+            {% for piece in item %}
+                <td>{{ piece }}</td>
+                
+            {% endfor %}
+            <td><button>Delete Line</button></td>
+        </tr>
+            {% endfor %}
+        </table>
+    </div>  
+    
+    <p></p>
+    
+    <button>Submit Takeoff to Database!</button>
+
+    <form action="{{ url_for('index') }}" method="get">
+        <button>Clear Takeoff!</button>
+    </form>
+</body>  
+
+{% endblock %}
