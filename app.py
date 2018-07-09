@@ -7,7 +7,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-
+cost_data = []
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -26,8 +26,8 @@ def enter_costs():
         size = request.form.get("size")
         unit = request.form.get("unit")
         cost = request.form.get("cost")
-
-        line = [item, size, unit, cost]
+        note = request.form.get("note")
+        line = [item, size, unit, cost, note]
         session["takeoff"].append(line)
     return render_template("enter_costs.html", takeoff=session["takeoff"])
 
@@ -37,7 +37,7 @@ def build_project():
 
 @app.route("/view_costs", methods=["GET"])
 def view_costs():
-    return render_template("view_costs.html")
+    return render_template("view_costs.html", cost_data=[])
 
 @app.route("/extend", methods=["GET"])
 def extend():

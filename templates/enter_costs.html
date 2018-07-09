@@ -8,6 +8,7 @@
         <input type="text" name="size" placeholder="Enter Size">
         <input type="text" name="unit" placeholder="Enter Unit of Measurement">
         <input type="text" name="cost" placeholder="Enter Unit Cost">
+        <input type="text" name="note" placeholder="Enter Notes">
         <button>Add Line</button>
     </form>
         
@@ -20,14 +21,15 @@
             <th>Size</th>
             <th>Unit of Measure</th>
             <th>Cost</th>
+            <th>Notes</th>
+            <th>Options</th>
             </tr>
         <tr>
             {% for item in takeoff %}
             {% for piece in item %}
-                <td>{{ piece }}</td>
-                
+                <td>{{ piece }}</td>  
             {% endfor %}
-            <td><button>Delete Line</button></td>
+            <td><a href="www.google.com">delete line</a></td>
         </tr>
             {% endfor %}
         </table>
