@@ -9,7 +9,7 @@
         <input type="text" name="unit" placeholder="Enter Unit of Measurement">
         <input type="text" name="cost" placeholder="Enter Unit Cost">
         <input type="text" name="note" placeholder="Enter Notes">
-        <button>Add Line</button>
+        <button type="submit" name="add_line" value="add_line">Add Line</button>
     </form>
         
     <h3>Takeoff Table</h3>
@@ -35,12 +35,12 @@
         </table>
     </div>  
     
-    <p></p>
+    <br>
     
-    <button>Submit Takeoff to Database!</button>
-
-    <form action="{{ url_for('index') }}" method="get">
-        <button>Clear Takeoff!</button>
+    <form action="{{ url_for('enter_costs') }}" method="post">
+        <button>Submit to Database</button>
+        <p></p>
+        <button type="submit" name="clear_table" value="clear_table">Clear Table</button>
     </form>
 </body>  
 
